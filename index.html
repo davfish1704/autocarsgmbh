@@ -34,6 +34,7 @@
       background: var(--white);
       line-height: 1.6;
       font-size: 1rem;
+      padding-bottom: 72px; /* Platz für mobilen Button */
     }
 
     a {
@@ -59,56 +60,55 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 16px 20px;
+      padding: 12px 16px;
       max-width: 1200px;
       margin: 0 auto;
-      gap: 16px;
+      gap: 12px;
     }
 
     .logo-wrap {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 10px;
       font-weight: 700;
       letter-spacing: 0.2px;
+      font-size: 0.95rem;
     }
 
     .logo {
-      width: 72px;
-      height: 72px;
+      width: 40px;
+      height: 40px;
       background: var(--bg);
-      border-radius: 10px;
+      border-radius: 8px;
       display: grid;
       place-items: center;
       border: 1px solid #cfcfcf;
-      padding: 8px;
+      padding: 6px;
       position: relative;
       overflow: hidden;
+      flex-shrink: 0;
     }
 
     .logo img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
-}
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
 
-.logo-fallback {
-  position: absolute;
-  inset: 0;
-  display: none;
-  place-items: center;
-  color: var(--muted);
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.3px;
-}
-
+    .logo-fallback {
+      position: absolute;
+      inset: 0;
+      display: none;
+      place-items: center;
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
 
     .nav-cta {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
+      display: none; /* Versteckt auf mobil */
     }
 
     .btn {
@@ -127,6 +127,7 @@
       cursor: pointer;
       box-shadow: 0 8px 20px rgba(212, 0, 28, 0.25);
       transition: all 200ms ease;
+      width: 100%;
     }
 
     .btn:hover {
@@ -160,42 +161,42 @@
     .hero {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 48px 20px 70px;
+      padding: 32px 16px 40px;
       display: grid;
-      gap: 24px;
+      gap: 20px;
     }
 
     .badge {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 10px 14px;
+      padding: 8px 12px;
       background: var(--bg);
       border-radius: 999px;
       color: var(--muted);
       font-weight: 600;
-      font-size: 0.95rem;
+      font-size: 0.85rem;
       border: 1px solid var(--border);
-      margin-bottom: 16px;
+      margin-bottom: 12px;
     }
 
     h1 {
-      font-size: 2.15rem;
+      font-size: 1.8rem;
       margin: 0 0 16px;
-      letter-spacing: -0.5px;
+      letter-spacing: -0.3px;
       line-height: 1.2;
     }
 
     h2 {
-      font-size: 1.65rem;
-      margin: 0 0 20px;
-      letter-spacing: -0.4px;
+      font-size: 1.4rem;
+      margin: 0 0 16px;
+      letter-spacing: -0.2px;
       line-height: 1.3;
     }
 
     h3 {
-      margin: 0 0 10px;
-      font-size: 1.15rem;
+      margin: 0 0 8px;
+      font-size: 1.1rem;
       font-weight: 600;
       line-height: 1.4;
     }
@@ -203,30 +204,31 @@
     p {
       margin: 0 0 16px;
       color: var(--muted);
-      font-size: 1rem;
+      font-size: 0.95rem;
     }
 
     .lead {
-      font-size: 1.05rem;
+      font-size: 1rem;
       color: var(--text);
-      line-height: 1.7;
-      margin-bottom: 24px;
+      line-height: 1.6;
+      margin-bottom: 20px;
     }
 
     .hero-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 26px;
+      gap: 20px;
       align-items: center;
     }
 
     .panel {
       background: var(--white);
       border-radius: var(--radius);
-      padding: 24px;
+      padding: 20px;
       box-shadow: var(--shadow);
       border: 1px solid var(--border);
       transition: box-shadow 200ms ease;
+      margin-bottom: 16px;
     }
 
     .panel:hover {
@@ -235,13 +237,13 @@
 
     .cta-row {
       display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-      margin: 24px 0;
+      flex-direction: column;
+      gap: 12px;
+      margin: 20px 0;
     }
 
     .section {
-      padding: 70px 20px;
+      padding: 40px 16px;
       background: var(--white);
     }
 
@@ -253,65 +255,67 @@
       max-width: 1200px;
       margin: 0 auto;
       display: grid;
-      gap: 28px;
+      gap: 24px;
     }
 
     .grid-cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 20px;
+      grid-template-columns: 1fr;
+      gap: 16px;
     }
 
     .card {
       background: var(--white);
       border-radius: var(--radius);
-      padding: 22px;
+      padding: 18px;
       border: 1px solid var(--border);
       box-shadow: var(--shadow);
       display: grid;
-      gap: 12px;
+      gap: 10px;
       transition: all 200ms ease;
     }
 
     .card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-3px);
       box-shadow: var(--shadow-hover);
     }
 
     .feature-list {
       display: grid;
-      gap: 12px;
-      margin: 16px 0 24px;
+      gap: 10px;
+      margin: 16px 0 20px;
     }
 
     .feature-item {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
+      font-size: 0.95rem;
     }
 
     .feature-item::before {
       content: "✓";
       color: var(--primary);
       font-weight: 700;
-      font-size: 0.9rem;
+      font-size: 0.8rem;
       background: rgba(212, 0, 28, 0.1);
-      width: 20px;
-      height: 20px;
+      width: 18px;
+      height: 18px;
       border-radius: 50%;
       display: grid;
       place-items: center;
+      flex-shrink: 0;
     }
 
     .contact-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 20px;
+      gap: 16px;
     }
 
     form {
       display: grid;
-      gap: 16px;
+      gap: 14px;
     }
 
     label {
@@ -319,6 +323,7 @@
       color: var(--text);
       display: block;
       margin-bottom: 6px;
+      font-size: 0.95rem;
     }
 
     .form-group {
@@ -343,7 +348,7 @@
     }
 
     textarea {
-      min-height: 140px;
+      min-height: 120px;
       resize: vertical;
     }
 
@@ -352,13 +357,13 @@
       border: none;
       border-radius: var(--radius);
       box-shadow: var(--shadow);
-      min-height: 280px;
+      min-height: 240px;
     }
 
     footer {
       background: #111;
       color: #fff;
-      padding: 30px 20px;
+      padding: 24px 16px;
     }
 
     .footer-inner {
@@ -386,6 +391,7 @@
       color: #fff;
       font-weight: 600;
       transition: opacity 200ms ease;
+      font-size: 0.9rem;
     }
 
     .footer-links a:hover {
@@ -394,15 +400,15 @@
 
     .note {
       color: #d3d3d3;
-      font-size: 0.95rem;
+      font-size: 0.85rem;
     }
 
     .cookie-banner {
       position: fixed;
-      bottom: 16px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: min(960px, calc(100% - 24px));
+      bottom: 80px; /* Platz für mobilen Button */
+      left: 16px;
+      right: 16px;
+      width: auto;
       background: #fff;
       border-radius: 14px;
       border: 1px solid #ececec;
@@ -411,6 +417,8 @@
       display: grid;
       gap: 10px;
       z-index: 20;
+      transform: none;
+      margin: 0;
     }
 
     .cookie-banner.hidden {
@@ -429,47 +437,137 @@
       font-weight: 600;
     }
 
-    /* WhatsApp Float Button */
-    .whatsapp-float {
+    /* Roter WhatsApp-Button für mobile */
+    .whatsapp-mobile-btn {
       position: fixed;
-      bottom: 24px;
-      right: 24px;
-      width: 60px;
-      height: 60px;
-      background: #25D366;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
+      bottom: 16px;
+      left: 16px;
+      right: 16px;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      padding: 16px;
+      font-weight: 600;
+      font-size: 1rem;
+      text-align: center;
+      box-shadow: 0 8px 25px rgba(212, 0, 28, 0.3);
       z-index: 100;
       transition: all 200ms ease;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
       text-decoration: none;
     }
 
-    .whatsapp-float:hover {
-      transform: scale(1.1);
-      box-shadow: 0 12px 30px rgba(37, 211, 102, 0.4);
+    .whatsapp-mobile-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(212, 0, 28, 0.4);
+      background: var(--primary-dark);
+      color: white;
     }
 
-    .whatsapp-float svg {
-      width: 32px;
-      height: 32px;
-      fill: #fff;
+    .whatsapp-mobile-btn:active {
+      transform: translateY(0);
     }
 
+    .whatsapp-mobile-btn svg {
+      width: 24px;
+      height: 24px;
+      fill: white;
+    }
+
+    /* Tablet & Desktop */
     @media (min-width: 768px) {
-      h1 { font-size: 2.6rem; }
-      .hero { padding: 70px 20px 90px; }
-      .hero-grid { grid-template-columns: 1.1fr 0.9fr; gap: 28px; }
-      .contact-grid { grid-template-columns: 1.1fr 0.9fr; }
-      .nav { padding: 16px 24px; }
-      .btn-large { padding: 17px 28px; }
+      body {
+        padding-bottom: 0;
+      }
+      
+      .nav {
+        padding: 16px 24px;
+      }
+      
+      .logo-wrap {
+        font-size: 1rem;
+      }
+      
+      .logo {
+        width: 48px;
+        height: 48px;
+      }
+      
+      .nav-cta {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      
+      h1 {
+        font-size: 2.6rem;
+      }
+      
+      h2 {
+        font-size: 1.65rem;
+      }
+      
+      .hero {
+        padding: 70px 20px 90px;
+      }
+      
+      .hero-grid {
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 28px;
+      }
+      
+      .contact-grid {
+        grid-template-columns: 1.1fr 0.9fr;
+      }
+      
+      .grid-cards {
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 20px;
+      }
+      
+      .cta-row {
+        flex-direction: row;
+        gap: 16px;
+      }
+      
+      .btn {
+        width: auto;
+      }
+      
+      .whatsapp-mobile-btn {
+        display: none; /* Auf Desktop ausblenden */
+      }
+      
+      .cookie-banner {
+        bottom: 16px;
+        left: 50%;
+        right: auto;
+        width: min(960px, calc(100% - 48px));
+        transform: translateX(-50%);
+      }
+      
+      .section {
+        padding: 70px 20px;
+      }
     }
 
     @media (min-width: 1024px) {
-      h1 { font-size: 3rem; }
-      h2 { font-size: 1.8rem; }
-      .hero-grid { grid-template-columns: 1.2fr 0.8fr; }
+      h1 {
+        font-size: 3rem;
+      }
+      
+      h2 {
+        font-size: 1.8rem;
+      }
+      
+      .hero-grid {
+        grid-template-columns: 1.2fr 0.8fr;
+      }
     }
   </style>
 </head>
@@ -485,7 +583,7 @@
       </div>
       <div class="nav-cta">
         <a class="btn" href="#kontakt">Jetzt Kontakt aufnehmen</a>
-        <a class="btn btn-secondary" href="tel:+4915561299635">Telefon: +49 1556 1299635</a>
+        <a class="btn btn-secondary" href="https://wa.me/4915561299635" target="_blank" rel="noopener">WhatsApp</a>
       </div>
     </div>
   </header>
@@ -591,6 +689,10 @@
               <div>+49 1556 1299635</div>
             </div>
             <div>
+              <strong>WhatsApp</strong>
+              <div><a href="https://wa.me/4915561299635" target="_blank" rel="noopener">WhatsApp schreiben</a></div>
+            </div>
+            <div>
               <strong>Adresse</strong>
               <div>AUTOCARS GmbH</div>
               <div>München, Deutschland</div>
@@ -625,11 +727,12 @@
     </section>
   </main>
 
-  <!-- WhatsApp Float Button -->
-  <a href="https://wa.me/4915561299635" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp Chat öffnen">
+  <!-- Roter WhatsApp-Button für mobile -->
+  <a href="https://wa.me/4915561299635" class="whatsapp-mobile-btn" target="_blank" rel="noopener" aria-label="WhatsApp schreiben">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
       <path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.549 4.125 1.517 5.861L0 24l6.335-1.652A11.96 11.96 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm6.99 16.713c-.238.667-1.237 1.219-1.723 1.299-.515.084-1.166.112-2.813-.417-2.237-.724-3.684-2.56-3.796-2.679-.112-.119-.896-1.186-.896-2.261s.595-1.579.803-1.779c.208-.199.447-.299.595-.299s.327.015.447.06c.119.045.298.06.417.896.119.834.595 2.948.647 3.162.052.209.104.477.015.745-.089.268-.149.417-.298.626-.149.209-.327.477-.477.656-.149.179-.298.388-.119.745.179.357.834 1.543 1.784 2.493 1.228 1.228 2.313 1.608 2.677 1.797.364.179.715.209 1.004.119.298-.089 1.237-.506 1.409-1 .179-.477.179-.893.119-1.004-.059-.119-.238-.179-.536-.298z"/>
     </svg>
+    <span>WhatsApp schreiben</span>
   </a>
 
   <footer aria-label="Seitenende">
@@ -690,6 +793,9 @@
       alert('Vielen Dank für Ihre Nachricht! Wir werden uns in Kürze bei Ihnen melden.');
       this.reset();
     });
+
+    // Optimierung für Touch-Geräte
+    document.addEventListener('touchstart', function() {}, {passive: true});
   </script>
 </body>
 </html>
