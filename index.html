@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AUTOCARS GmbH | Ihr Autohaus in München</title>
+  <meta name="description" content="AUTOCARS GmbH in München: Ihr zuverlässiges Autohaus für Verkauf, Ankauf, Finanzierung und persönlichen Service.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #d4001c;
+      --text: #1a1a1a;
+      --muted: #4a4a4a;
+      --bg: #f7f7f7;
+      --white: #ffffff;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+      --radius: 14px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    header {
+      background: linear-gradient(180deg, #fff, #f3f3f3);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      gap: 12px;
+    }
+
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+    }
+
+    .logo {
+      width: 48px;
+      height: 48px;
+      background: var(--bg);
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      border: 1px dashed #cfcfcf;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .nav-cta {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 16px;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(212, 0, 28, 0.25);
+      transition: transform 120ms ease, box-shadow 120ms ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 24px rgba(212, 0, 28, 0.32);
+    }
+
+    .btn:active {
+      transform: translateY(0);
+      box-shadow: 0 6px 16px rgba(212, 0, 28, 0.25);
+    }
+
+    .hero {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px 60px;
+      display: grid;
+      gap: 24px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      background: var(--bg);
+      border-radius: 999px;
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin: 0;
+      letter-spacing: -0.5px;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      margin: 0 0 12px;
+      letter-spacing: -0.4px;
+    }
+
+    h3 {
+      margin: 0 0 8px;
+      font-size: 1.15rem;
+    }
+
+    p {
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .lead {
+      font-size: 1.05rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .panel {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: var(--shadow);
+      border: 1px solid #ededed;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .section {
+      padding: 60px 20px;
+      background: var(--white);
+    }
+
+    .section:nth-of-type(even) {
+      background: var(--bg);
+    }
+
+    .section-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      gap: 24px;
+    }
+
+    .grid-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 18px;
+      border: 1px solid #e8e8e8;
+      box-shadow: var(--shadow);
+      display: grid;
+      gap: 10px;
+    }
+
+    .icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: #ffe8ed;
+      color: var(--primary);
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    .list-inline {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      color: var(--muted);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    form {
+      display: grid;
+      gap: 12px;
+    }
+
+    label {
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid #dcdcdc;
+      font-size: 1rem;
+      font-family: inherit;
+      transition: border-color 120ms ease, box-shadow 120ms ease;
+      background: #fff;
+    }
+
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 4px rgba(212, 0, 28, 0.12);
+    }
+
+    textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    iframe {
+      width: 100%;
+      border: none;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      min-height: 280px;
+    }
+
+    footer {
+      background: #111;
+      color: #fff;
+      padding: 30px 20px;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      gap: 14px;
+    }
+
+    .footer-top {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .note {
+      color: #d3d3d3;
+      font-size: 0.95rem;
+    }
+
+    .cookie-banner {
+      position: fixed;
+      bottom: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(960px, calc(100% - 24px));
+      background: #fff;
+      border-radius: 14px;
+      border: 1px solid #ececec;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.14);
+      padding: 16px;
+      display: grid;
+      gap: 10px;
+      z-index: 20;
+    }
+
+    .cookie-banner.hidden {
+      display: none;
+    }
+
+    @media (min-width: 768px) {
+      h1 { font-size: 2.6rem; }
+      .hero { padding: 70px 20px 90px; }
+      .hero-grid { grid-template-columns: 1.1fr 0.9fr; gap: 28px; }
+      .contact-grid { grid-template-columns: 1.1fr 0.9fr; }
+      .nav { padding: 16px 24px; }
+    }
+
+    @media (min-width: 1024px) {
+      h1 { font-size: 3rem; }
+      h2 { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="logo-wrap">
+        <div class="logo" id="logo-header" aria-label="AUTOCARS GmbH Logo">
+          <!-- Logo hier einfügen -->
+          Logo
+        </div>
+        <span>AUTOCARS GmbH</span>
+      </div>
+      <div class="nav-cta">
+        <a class="btn" href="#kontakt">Jetzt Kontakt aufnehmen</a>
+        <a class="btn" href="https://wa.me/4915561299635" target="_blank" rel="noopener">WhatsApp schreiben</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-grid">
+        <div class="panel">
+          <span class="badge">Autohaus in München · Persönlich & zuverlässig</span>
+          <h1 id="hero-title">AUTOCARS GmbH – Ihr Autohaus für top gepflegte Fahrzeuge</h1>
+          <p class="lead">Wir stehen für ehrliche Beratung, schnelle Abwicklung und Fahrzeuge, die wirklich zu Ihnen passen. Von Ankauf bis Finanzierung begleiten wir Sie transparent und unkompliziert.</p>
+          <div class="cta-row">
+            <a class="btn" href="#kontakt">Jetzt Kontakt aufnehmen</a>
+            <a class="btn" href="https://wa.me/4915561299635" target="_blank" rel="noopener">WhatsApp schreiben</a>
+          </div>
+          <div class="list-inline">
+            <span>📍 München, Deutschland</span>
+            <span>•</span>
+            <span>✅ Persönliche Beratung</span>
+            <span>•</span>
+            <span>🚗 Schnelle Verfügbarkeit</span>
+          </div>
+        </div>
+        <div class="panel" aria-label="Helle Fahrzeug-Visualisierung">
+          <img src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=900&q=80" alt="Modernes Fahrzeug vor Autohaus" style="border-radius: 12px;">
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="ueber-uns" aria-labelledby="ueber-uns-title">
+      <div class="section-inner">
+        <div>
+          <h2 id="ueber-uns-title">Über uns</h2>
+          <p>Als inhabergeführtes Autohaus in München setzen wir auf Handschlagqualität. Unser Team prüft jedes Fahrzeug sorgfältig, berät auf Augenhöhe und findet für jede Situation eine passgenaue Lösung. Transparente Prozesse, schnelle Entscheidungen und ein persönlicher Ansprechpartner sorgen für ein sicheres Gefühl – vom ersten Gespräch bis zur Übergabe.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="leistungen" aria-labelledby="leistungen-title">
+      <div class="section-inner">
+        <div>
+          <h2 id="leistungen-title">Leistungen</h2>
+          <p>Alles aus einer Hand – damit Sie Zeit sparen und sich auf das Wesentliche konzentrieren können.</p>
+        </div>
+        <div class="grid-cards">
+          <div class="card">
+            <div class="icon" aria-hidden="true">🚗</div>
+            <h3>Fahrzeugverkauf</h3>
+            <p>Gepflegte Fahrzeuge mit nachvollziehbarer Historie, transparent aufbereitet und kurzfristig verfügbar.</p>
+          </div>
+          <div class="card">
+            <div class="icon" aria-hidden="true">🔄</div>
+            <h3>Fahrzeugankauf</h3>
+            <p>Schnelle Bewertung, faire Angebote und zuverlässige Abwicklung inklusive Abmeldung auf Wunsch.</p>
+          </div>
+          <div class="card">
+            <div class="icon" aria-hidden="true">💶</div>
+            <h3>Finanzierung</h3>
+            <p>Individuelle Finanzierungsmodelle mit kurzen Entscheidungswegen und transparenter Beratung.</p>
+          </div>
+          <div class="card">
+            <div class="icon" aria-hidden="true">🤝</div>
+            <h3>Beratung & Service</h3>
+            <p>Ein persönlicher Ansprechpartner kümmert sich um Probefahrten, Zulassung und alle Formalitäten.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="fahrzeuge" aria-labelledby="fahrzeuge-title">
+      <div class="section-inner">
+        <div class="panel">
+          <h2 id="fahrzeuge-title">Fahrzeuge & Angebote</h2>
+          <p>Unsere aktuellen Fahrzeuge finden Sie hier:</p>
+          <a class="btn" href="https://home.mobile.de/MEINAUTOGMBHMUENCHEN#contact" target="_blank" rel="noopener">Zu unseren Fahrzeugen</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="kontakt" aria-labelledby="kontakt-title">
+      <div class="section-inner contact-grid">
+        <div class="panel">
+          <h2 id="kontakt-title">Kontakt</h2>
+          <form aria-label="Kontaktformular">
+            <div>
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" placeholder="Ihr Name" autocomplete="name" required>
+            </div>
+            <div>
+              <label for="email">E-Mail</label>
+              <input id="email" name="email" type="email" placeholder="ihre.mail@example.com" autocomplete="email" required>
+            </div>
+            <div>
+              <label for="message">Nachricht</label>
+              <textarea id="message" name="message" placeholder="Wie können wir helfen?" required></textarea>
+            </div>
+            <button class="btn" type="submit">Nachricht senden</button>
+          </form>
+          <div class="cta-row" style="margin-top:16px;">
+            <a class="btn" href="https://wa.me/4915561299635" target="_blank" rel="noopener">WhatsApp: +49 1556 1299635</a>
+            <div style="display:grid;gap:4px;color:var(--muted);">
+              <strong>Adresse</strong>
+              <span>AUTOCARS GmbH</span>
+              <span>München, Deutschland</span>
+            </div>
+          </div>
+        </div>
+        <div class="panel">
+          <h3>Hier finden Sie uns</h3>
+          <iframe title="AUTOCARS GmbH in München" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2662.019986261289!2d11.575382015967136!3d48.137107779223065!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479e769b3135df73%3A0x66450f5336e5d885!2sM%C3%BCnchen!5e0!3m2!1sde!2sde!4v1700000000000!5m2!1sde!2sde" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <p>Persönliche Beratung vor Ort nach Terminvereinbarung.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="impressum" aria-labelledby="impressum-title">
+      <div class="section-inner">
+        <div class="panel">
+          <h2 id="impressum-title">Impressum</h2>
+          <p>Platzhalter für das Impressum des Autohauses.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="datenschutz" aria-labelledby="datenschutz-title">
+      <div class="section-inner">
+        <div class="panel">
+          <h2 id="datenschutz-title">Datenschutzerklärung</h2>
+          <p>Platzhalter für die Datenschutzerklärung des Autohauses.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer aria-label="Seitenende">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="logo" id="logo-footer" aria-label="AUTOCARS GmbH Logo">
+          <!-- Logo hier einfügen -->
+          Logo
+        </div>
+        <div class="footer-links">
+          <a href="#impressum">Impressum</a>
+          <a href="#datenschutz">Datenschutz</a>
+        </div>
+      </div>
+      <p class="note">Rechtstexte werden vom Kunden gestellt.</p>
+      <!-- @--
+      Impressum und Datenschutzerklärung werden vom Kunden gestellt.
+      Für die rechtliche Korrektheit übernimmt der Auftraggeber die Verantwortung.
+      -- -->
+    </div>
+  </footer>
+
+  <div class="cookie-banner" id="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie Hinweis">
+    <div>
+      <strong>Cookie-Hinweis</strong>
+      <p style="margin:6px 0 0;">Diese Website verwendet ausschließlich technisch notwendige Cookies, um die Funktion der Seite sicherzustellen.</p>
+    </div>
+    <div>
+      <button class="btn" id="cookie-accept">OK</button>
+    </div>
+  </div>
+
+  <script>
+    const banner = document.getElementById('cookie-banner');
+    const acceptBtn = document.getElementById('cookie-accept');
+    const consentKey = 'autocars-cookie-consent';
+
+    if (localStorage.getItem(consentKey) === 'accepted') {
+      banner.classList.add('hidden');
+    }
+
+    acceptBtn.addEventListener('click', () => {
+      localStorage.setItem(consentKey, 'accepted');
+      banner.classList.add('hidden');
+    });
+  </script>
+</body>
+</html>
